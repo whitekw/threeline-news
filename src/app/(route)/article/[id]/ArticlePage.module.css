@@ -1,0 +1,13 @@
+.title {
+  /* padding-bottom: 2rem; */
+  margin-bottom: 2rem;
+  /* border-bottom: 1px solid #dbdbdb; */
+}
+
+.image {
+  display: block;
+  width: 80%;
+  aspect-ratio: 14/9;
+  margin: 0 auto;
+  background-color: gray;
+}

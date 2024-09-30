@@ -1,0 +1,5 @@
+.articleList {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 1rem;
+}
