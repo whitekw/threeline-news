@@ -1,7 +1,13 @@
 import Article from "@app/_components/article/Article";
 
+const getData = async (category: number) => {
+  const response = await fetch(`http://localhost:3000/api/article/list?category=${category}`);
+  if (!response.ok) throw Error("Failed to fetch data");
+  return response.json();
+};
+
 const ArticleList = async ({category}: {category: number}) => {
-  const data = await (await fetch(`http://localhost:3000/api/article/list?category=${category}`)).json();
+  const data = await getData(category);
 
   return (
     <>
