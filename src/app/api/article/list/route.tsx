@@ -5,9 +5,6 @@ export async function GET(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);
     const category = Number(searchParams.get("category"));
-
-    console.log(category)
-
     const db = await pool.getConnection();
     const query = `
       select
