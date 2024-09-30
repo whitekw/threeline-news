@@ -2,11 +2,13 @@ import Link from "next/link";
 import styles from "./NewsItem.module.css";
 import Image from "next/image";
 
-const NewsItem = ({id, title, date}: {id: number, title: string, date: string}) => {
+const NewsItem = (
+  {id, category, title, image_url, date}:
+  {id: number, category: number, title: string, image_url: string, date: string}) => {
   return (
     <article className={styles.newsItem}>
       <Link href={`/article/${id}`}>
-        <img className={styles.thumbnail} src="https://ssl.pstatic.net/static/newsstand/2024/0924/mbc/111233/009.jpg"></img>
+        <img className={styles.thumbnail} src={image_url}></img>
       </Link>
       <div className={styles.info}>
         <Link href={`/article/${id}`} className={styles.title}>{title}</Link>

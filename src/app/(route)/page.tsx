@@ -7,12 +7,14 @@ const App = async () => {
 
   return (
     <MainContent>
-      {data.map((article: {article_id: number, title: string, origin_created_at: string}) => {
+      {data.map((article: {article_id: number, category: number, title: string, image_url: string, origin_created_at: string}) => {
         return (
           <NewsItem
             key={article.article_id}
             id={article.article_id}
+            category={article.category}
             title={article.title}
+            image_url={article.image_url}
             date={article.origin_created_at}
           />
         )
