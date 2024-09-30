@@ -41,14 +41,20 @@
   text-decoration: underline;
 }
 
-.info > div {
+.info .bottom {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: space-between;
   margin-top: auto;
 }
 
-.info .icon {
+.info .bottom .comment {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.bottom .comment .icon {
   width: 1.7rem;
   height: 1.7rem;
   background-image: url("/images/icons/icon-comment.png");
@@ -57,8 +63,14 @@
   background-repeat: no-repeat;
 }
 
-.info > div > span {
+.bottom .comment span {
   font-size: 1.2rem;
   font-weight: bold;
   user-select: none;
+  color: gray;
+}
+
+.bottom .date {
+  font-size: 1.2rem;
+  color: gray;
 }

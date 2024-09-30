@@ -2,7 +2,7 @@ import Link from "next/link";
 import styles from "./NewsItem.module.css";
 import Image from "next/image";
 
-const NewsItem = ({id, title}: {id: number, title: string}) => {
+const NewsItem = ({id, title, date}: {id: number, title: string, date: string}) => {
   return (
     <article className={styles.newsItem}>
       <Link href={`/article/${id}`}>
@@ -10,9 +10,13 @@ const NewsItem = ({id, title}: {id: number, title: string}) => {
       </Link>
       <div className={styles.info}>
         <Link href={`/article/${id}`} className={styles.title}>{title}</Link>
-        <div>
-          <div className={styles.icon}/>
-          <span>9</span>
+        <div className={styles.bottom}>
+          <div className={styles.comment}>
+            <div className={styles.icon}/>
+            <span>9</span>
+          </div>
+
+          <span className={styles.date}>{date}</span>
         </div>
       </div>
     </article>
