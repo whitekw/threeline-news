@@ -1,8 +1,13 @@
 import pool from "@app/_libs/mysql";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-export async function GET() {
+export async function GET(req: NextRequest) {
   try {
+    const { searchParams } = new URL(req.url);
+    const category = Number(searchParams.get("category"));
+
+    console.log(category)
+
     const db = await pool.getConnection();
     const query = `
       select
@@ -12,7 +17,10 @@ export async function GET() {
         image_url,
         date_format(origin_created_at, '%Y-%m-%d %H:%i') as origin_created_at
       from article
-      order by origin_created_at desc, article_id desc`;
+      ${category && category > 0 ? `where category = ${category}` : ''}
+      order by origin_created_at desc, article_id desc
+    `;
+
     const [rows] = await db.execute(query);
     db.release();
 

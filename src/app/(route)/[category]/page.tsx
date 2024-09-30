@@ -1,13 +1,12 @@
-import styles from "./page.module.css";
 import MainContent from "@app/_components/mainContent/MainContent";
 import ArticleList from "@app/_components/articleList/ArticleList";
 
-const App = async () => {
+const CategoryPage = async ({params}: { params: { category: number }}) => {
   return (
     <MainContent>
-      <ArticleList category={0}/>
+      <ArticleList category={params.category}/>
     </MainContent>
   );
 }
 
-export default App;
+export default CategoryPage;

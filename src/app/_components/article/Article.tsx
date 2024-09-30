@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "./NewsItem.module.css";
+import styles from "./Article.module.css";
 import Image from "next/image";
 
 const NewsItem = (
